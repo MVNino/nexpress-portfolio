@@ -5,5 +5,5 @@ import mongoose from "mongoose";
 export const GET = async () => {
   const conn = await connectToDatabase();
 
-  return NextResponse.json({ message: "INDEX PAGE HERE", status: 200 });
+  return NextResponse.json({ message: "INDEX API", status: 200 });
 };

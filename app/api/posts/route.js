@@ -19,11 +19,11 @@ export const POST = async (request) => {
     } = await request.json();
 
     const post = await Post.create({
-        title,
-        description,
-        content,
-        isPublished,
-      });
+      title,
+      description,
+      content,
+      isPublished,
+    });
 
     return NextResponse.json(
       { data: post, message: "Created" },
