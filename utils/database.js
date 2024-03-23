@@ -1,19 +1,14 @@
+import mongoose from 'mongoose'
+
 // MongoDB connection URI
-const uri =
-  "mongodb+srv://ninomarlonvilla:<password>@cluster0.zwpbnot.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const uri = "mongodb+srv://ninomarlonvilla:Nino236275@cluster0.zwpbnot.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
-export default connection = async () => {
-  const client = new MongoClient(uri, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
+export async function connectToDatabase() {
+  try {
+    const connection = mongoose.connect(uri)
 
-  client.connect((error) => {
-    if (error) {
-      console.error("Failed to connect to mongodb: ", error);
-      return;
-    }
-
-    console.log("Connected to mongodb!");
-  });
+    return connection
+  } catch(error) {
+    console.error('ERROR LOG: ', error)
+  }
 };
