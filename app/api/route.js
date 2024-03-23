@@ -1,8 +1,9 @@
 import { NextResponse } from "next/server";
-import connection from "@/utils/database";
+import { connection, connectToDatabase } from "@/utils/database";
+import mongoose from "mongoose";
 
 export const GET = async () => {
-await connection();
+  const conn = await connectToDatabase();
 
   return NextResponse.json({ message: "INDEX PAGE HERE", status: 200 });
 };
