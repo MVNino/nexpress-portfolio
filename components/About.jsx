@@ -62,7 +62,7 @@ const About = () => {
         src="/arrow.png"
         alt="Arrow icon"
         className="icon arrow"
-        onClick="location.href='./#experience'"
+        // onClick="location.href='./#experience'"
         width="32"
         height="32"
       />

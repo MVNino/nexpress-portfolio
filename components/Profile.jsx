@@ -29,11 +29,13 @@ const Profile = async () => {
         <div className="btn-container">
           <button
             className="btn btn-color-2"
-            onclick="window.open('./assets/marlon_nino_cv.pdf')"
+            // onClick="window.open('./assets/marlon_nino_cv.pdf')"
           >
             Download CV
           </button>
-          <button className="btn btn-color-1" onclick="location.href='./#contact'">
+          <button className="btn btn-color-1" 
+          // onClick="location.href='./#contact'"
+          >
             Contact Info
           </button>
         </div>
@@ -42,7 +44,7 @@ const Profile = async () => {
             src="/linkedin.png"
             alt="My LinkedIn profile"
             className="icon"
-            onClick="location.href='https://www.linkedin.com/in/marlon-nino/'"
+            // onClick="location.href='https://www.linkedin.com/in/marlon-nino/'"
             width="32"
             height="32"
           />
@@ -50,7 +52,7 @@ const Profile = async () => {
             src="/github.png"
             alt="My Github profile"
             className="icon"
-            onClick="location.href='https://github.com/mvnino'"
+            // onClick="location.href='https://github.com/mvnino'"
             width="32"
             height="32"
           />
