@@ -11,12 +11,15 @@ export const POST = async (request) => {
   try {
     const { settingType, value } = await request.json();
 
-    await Setting.create({
+    const setting = await Setting.create({
       settingType,
       value,
     });
 
-    return NextResponse.json({ message: "Created" }, { status: 201 });
+    return NextResponse.json(
+      { data: setting, message: "Created" },
+      { status: 201 }
+    );
   } catch (error) {
     return NextResponse.json({ error }, { status: 500 });
   }

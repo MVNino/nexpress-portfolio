@@ -1,9 +1,9 @@
 import mongoose from 'mongoose'
 
-// MongoDB connection URI
-const uri = "mongodb+srv://ninomarlonvilla:Nino236275@cluster0.zwpbnot.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
-
 export async function connectToDatabase() {
+  // Mongo DB URI
+  const uri = process.env.MONGO_DB_URI
+
   try {
     const connection = mongoose.connect(uri)
 
