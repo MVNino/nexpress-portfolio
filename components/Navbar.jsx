@@ -4,9 +4,15 @@ const Navbar = () => {
   return (
     <>
       <nav id="desktop-nav">
-        <div class="logo">Marlon</div>
+        <div className="logo">
+          <img
+            src="/marlon_logo.png"
+            alt="Marlon Nino Logo"
+            style={{ borderRadius: '5%', width: '6rem', height: '5rem' }}
+          />
+        </div>
         <div>
-          <ul class="nav-links">
+          <ul className="nav-links">
             <li>
               <a href="/#about">About</a>
             </li>
@@ -27,36 +33,56 @@ const Navbar = () => {
       </nav>
 
       <nav id="hamburger-nav">
-        <div class="logo">Marlon</div>
-        <div class="hamburger-menu">
-          <div class="hamburger-icon" onclick="toggleMenu()">
+        <div className="logo">Marlon</div>
+        <div className="hamburger-menu">
+          <div
+            className="hamburger-icon"
+            // onClick="toggleMenu()"
+          >
             <span></span>
             <span></span>
             <span></span>
           </div>
-          <div class="menu-links">
+          <div className="menu-links">
             <li>
-              <a href="#about" onclick="toggleMenu()">
+              <a
+                href="#about"
+                // onClick="toggleMenu()"
+              >
                 About
               </a>
             </li>
             <li>
-              <a href="#experience" onclick="toggleMenu()">
+              <a
+                href="#experience"
+                // onClick="toggleMenu()"
+              >
                 Experience
               </a>
             </li>
             <li>
-              <a href="#projects" onclick="toggleMenu()">
+              <a
+                href="#projects"
+                // onClick="toggleMenu()"
+              >
                 Projects
               </a>
             </li>
             <li>
-              <a href="#contact" onclick="toggleMenu()">
+              <a
+                href="#contact"
+                // onClick="toggleMenu()"
+              >
                 Contact
               </a>
             </li>
             <li>
-              <a href="/blogs" onClick="toggleMenu()">Blogs</a>
+              <a
+                href="/blogs"
+                // onClick="toggleMenu()"
+              >
+                Blogs
+              </a>
             </li>
           </div>
         </div>

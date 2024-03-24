@@ -1,7 +1,9 @@
 import Setting from "@/models/Setting";
+import { connectToDatabase } from "@/utils/database";
 import { NextResponse } from "next/server";
 
 export const GET = async (request, { params }) => {
+  const conn = await connectToDatabase();
   const setting = await Setting.findById(params.id);
 
   if (!setting)
@@ -15,6 +17,8 @@ export const GET = async (request, { params }) => {
 
 export const PUT = async (request, { params }) => {
   try {
+    const conn = await connectToDatabase();
+
     const { settingType, value } = await request.json();
 
     await Setting.findByIdAndUpdate(params.id, { settingType, value });
