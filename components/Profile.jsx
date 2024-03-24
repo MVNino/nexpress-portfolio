@@ -1,7 +1,17 @@
 import React from "react";
 import Image from "next/image";
 
-const Profile = () => {
+const fetchSettings = async () => {
+  const response = await fetch("http://localhost:3000/api/settings");
+
+  const { data: setting } = await response.json();
+
+  return setting;
+};
+
+const Profile = async () => {
+  const setting = (await fetchSettings()) || [];
+
   return (
     <section id="profile">
       <div className="section__pic-container">
@@ -13,19 +23,18 @@ const Profile = () => {
         />
       </div>
       <div className="section__text">
-        <p className="section__text__p1">Hello, I'm</p>
-        <h1 className="title">Marlon Niño</h1>
-        <p className="section__text__p2">Software Developer</p>
+        <p className="section__text__p1 text-white-f8">Hello, I'm</p>
+        <h1 className="title text-white-smoke">Marlon Niño</h1>
+        <p className="section__text__p2 text-white-f8">Software Developer</p>
         <div className="btn-container">
           <button
             className="btn btn-color-2"
-            onClick="window.open('/marlon_nino_cv.pdf')"
+            // onClick="window.open('./assets/marlon_nino_cv.pdf')"
           >
             Download CV
           </button>
-          <button
-            className="btn btn-color-1"
-            onClick="location.href='./#contact'"
+          <button className="btn btn-color-1" 
+          // onClick="location.href='./#contact'"
           >
             Contact Info
           </button>
@@ -35,7 +44,7 @@ const Profile = () => {
             src="/linkedin.png"
             alt="My LinkedIn profile"
             className="icon"
-            onClick="location.href='https://www.linkedin.com/in/marlon-nino/'"
+            // onClick="location.href='https://www.linkedin.com/in/marlon-nino/'"
             width="32"
             height="32"
           />
@@ -43,7 +52,7 @@ const Profile = () => {
             src="/github.png"
             alt="My Github profile"
             className="icon"
-            onClick="location.href='https://github.com/mvnino'"
+            // onClick="location.href='https://github.com/mvnino'"
             width="32"
             height="32"
           />

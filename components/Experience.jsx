@@ -4,8 +4,8 @@ import Image from "next/image";
 const Experience = () => {
   return (
     <section id="experience">
-      <p className="section__text__p1">Explore My</p>
-      <h1 className="title">Experience</h1>
+      <p className="section__text__p1 text-white-f8">Explore My</p>
+      <h1 className="title text-white-smoke">Experience</h1>
       <div className="experience-details-container">
         <div className="about-containers">
           <div className="details-container">
@@ -176,14 +176,6 @@ const Experience = () => {
           </div>
         </div>
       </div>
-      <Image
-        src="/arrow.png"
-        alt="Arrow icon"
-        className="icon arrow"
-        onClick="location.href='./#projects'"
-        width="32"
-        height="32"
-      />
     </section>
   );
 };

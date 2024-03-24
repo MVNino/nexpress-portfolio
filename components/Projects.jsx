@@ -50,7 +50,7 @@ const Projects = () => {
         src="/arrow.png"
         alt="Arrow icon"
         className="icon arrow"
-        onClick="location.href='./#contact'"
+        // onClick="location.href='./#contact'"
         width="32"
         height="32"
       />

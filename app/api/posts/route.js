@@ -4,6 +4,8 @@ import { connectToDatabase } from "@/utils/database";
 import { NextResponse } from "next/server";
 
 export const GET = async (request) => {
+  const conn = await connectToDatabase();
+
   const posts = await Post.find({});
 
   return NextResponse.json({ data: posts, message: "Find All" });
@@ -11,6 +13,8 @@ export const GET = async (request) => {
 
 export const POST = async (request) => {
   try {
+    const conn = await connectToDatabase();
+    
     const {
       title,
       description,

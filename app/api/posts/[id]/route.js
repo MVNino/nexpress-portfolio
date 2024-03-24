@@ -1,7 +1,10 @@
 import Post from "@/models/Post";
+import { connectToDatabase } from "@/utils/database";
 import { NextResponse } from "next/server";
 
 export const GET = async (request, { params }) => {
+  const conn = await connectToDatabase();
+
   const post = await Post.findById({ _id: params.id });
 
   if (!post)
@@ -12,6 +15,8 @@ export const GET = async (request, { params }) => {
 
 export const PUT = async (request, { params }) => {
   try {
+    const conn = await connectToDatabase();
+    
     const { title, description, content, isPublished } = await request.json();
 
     await Post.findByIdAndUpdate(params.id, {
