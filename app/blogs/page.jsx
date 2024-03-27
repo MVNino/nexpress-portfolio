@@ -41,7 +41,7 @@ const BlogList = async () => {
                 </div>
                 <div className="blog-text">
                   <span>18 July 2021 / Web Design</span>
-                  <a href="#" className="blog-title">
+                  <a href={`/blogs/${post._id}`} className="blog-title">
                     {post.title}
                   </a>
                   <p>{post.description}</p>
