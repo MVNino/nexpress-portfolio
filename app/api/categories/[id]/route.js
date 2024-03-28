@@ -22,11 +22,11 @@ export const PUT = async (request, { params }) => {
 
     const { name } = request.json();
 
-    const category = await Category.findByIdAndUpdate(params.id, {
+    await Category.findByIdAndUpdate(params.id, {
       name,
     });
 
-    return NextResponse.json({ data: category, message: "Updated" });
+    return NextResponse.json({ message: "Updated" });
   } catch (error) {
     return NextResponse.json({ error }, { status: 500 });
   }
